@@ -46,7 +46,7 @@ void CConfigFileReader::_LoadFile(const char* filename)
 	char buf[256];
 	for (;;)
 	{
-		char* p = fgets(buf, 256, fp);
+		char* p = fgets(buf, 256, fp);  // read a line endwith '\0' per time
 		if (!p)
 			break;
 

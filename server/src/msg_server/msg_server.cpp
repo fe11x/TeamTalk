@@ -25,8 +25,9 @@ void msg_serv_callback(void* callback_data, uint8_t msg, uint32_t handle, void* 
 {
 	if (msg == NETLIB_MSG_CONNECT)
 	{
+		// once new client connect in,relate the socket after accept with CMsgConn,
 		CMsgConn* pConn = new CMsgConn();
-		pConn->OnConnect(handle);
+		pConn->OnConnect(handle);      // add this socket to eventloop
 	}
 	else
 	{

@@ -98,6 +98,7 @@ int netlib_close(net_handle_t handle)
 
 int netlib_option(net_handle_t handle, int opt, void* optval)
 {
+	// set memeber paras of BaseSocket according to opt type
 	CBaseSocket* pSocket = FindBaseSocket(handle);
 	if (!pSocket)
 		return NETLIB_ERROR;
