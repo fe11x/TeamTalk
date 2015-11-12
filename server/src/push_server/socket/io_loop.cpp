@@ -83,7 +83,7 @@ void CIOLoop::Run()
 		timeval tv;
 		tv.tv_sec = 1;
 		tv.tv_usec = 0;
-		int nRet = select(nMaxfd + 1, &fd_read, &fd_write, &fd_error, NULL);
+		int nRet = select(nMaxfd + 1, &fd_read, &fd_write, &fd_error, NULL);      // select
 		if (nRet > 0)
 		{
 			if (FD_ISSET(m_waker.GetWakeSocket(), &fd_read))
